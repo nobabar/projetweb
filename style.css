@@ -32,3 +32,10 @@ nav{
     border-top: 2px solid black;
     border-bottom: 2px solid black;
 }
+
+footer {
+    border-top: 2px solid black;
+    display:flex;
+    flex-direction:row;
+}
+    
