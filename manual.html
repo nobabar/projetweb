@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -7,31 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <style>
-        iframe {
-            width: 800px;
-            height: 550px;
-            align-self: center;
-        }
-
-        img {
-            width: 800px;
-            height: 550px;
-            align-self: center;
-        }
-    </style>
+    <link rel="stylesheet" href="manual.css">
 </head>
 
 <body>
-    <!-- <iframe src="CARNET_MECANICIEN.pdf#toolbar=0"></iframe> -->
-    <!-- <embed src="CARNET_MECANICIEN.pdf#toolbar=0" type="application/pdf" height="300px" width="100%" class="responsive"> -->
+    <div class="bgImageContainer"></div>
+    <div id="book">
+        <button id="left-btn" onclick="turn('left')">
+            <i class="arrow"></i>
+        </button>
 
-    <!-- <div class="embed-responsive embed-responsive-4by3">
-        <iframe class="embed-responsive-item" src="CARNET_MECANICIEN.pdf#toolbar=0" allowfullscreen></iframe>
-    </div> -->
+        <div id="page">
+            <div id="page_number">1/27</div>
+            <img id="page_content" src="CARNET_MECANICIEN/01.png">
+        </div>
 
-    <div id="flipbook">
-        <img id="page" src="CARNET_MECANICIEN/01.png">
+        <button id="right-btn" onclick="turn('right')">
+            <i class="arrow"></i>
+        </button>
     </div>
 
     <script type="text/javascript" src="manual.js"></script>
