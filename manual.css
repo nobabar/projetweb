@@ -1,0 +1,104 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+body, html {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.bgImageContainer {
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	position:absolute;
+	background-image: url(CARNET_MECANICIEN/workbench_tools.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	filter: blur(7px)
+}
+
+#book {
+	position: absolute;
+	z-index:10;
+	width: 1000px;
+	height: 600px;
+	left: 50%;
+	top: 50%;
+	margin-left: -500px;
+	margin-top: -300px;
+	display: flex;
+    justify-content: center;
+}
+
+button {
+    height: 50px;
+	width: 50px;
+    border: none;
+    outline: none;
+    background: rgba( 0, 0, 0, 0.15);
+    cursor: pointer;
+    padding: 1em;
+    display: flex;
+	border-radius: 50%;
+}
+
+button:hover {
+	background: rgba( 0, 0, 0, 0.5);
+}
+
+button .arrow {
+    border: solid #fff;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 10px;
+    transition: transform 0.3s ease-out;
+    outline: none;
+}
+
+#right-btn {
+	z-index: 2;
+    margin: auto 0 auto -2em;
+}
+
+#right-btn .arrow {
+    transform: rotate(-45deg);
+}
+
+#left-btn {
+    z-index: 2;
+    margin: auto -2em auto 0;
+}
+
+#left-btn .arrow {
+    transform: rotate(135deg);
+}
+
+#page {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+#page_content {
+    width: 100%;
+    height: 100%;
+	z-index: 1;
+}
+
+#page_number {
+	display: inline-block;
+	height: 25px;
+	width: min-content;
+	padding: 5px 8px 5px 8px;
+	z-index: 1;
+    border: none;
+    outline: none;
+	color: white;
+    background: rgba( 0, 0, 0, 0.15);
+	border-radius: 25%;
+}
