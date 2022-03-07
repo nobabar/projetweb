@@ -1,13 +1,114 @@
-p {
+body {
   font-family: Fira, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.8em;
+}
+a {
+    color:#911c9c;
+}
+a:hover {
+  opacity: 0.5;
+}
+
+main {
+  max-width: 1140px;
+}
+
+main section:not(:last-child) {
+  border-bottom: 2px solid #ccc;
+}
+
+article {
+  padding:0 1em;
+}
+
+section{
+  margin: 1em;
+  padding: 1em;
+}
+
+header, main, footer {
+  margin: 0 auto;
 }
 header{
+    padding: 2em;
+    background-size: cover;
+    background-position: fixed;
+    color: white;
     background-image: url(placeholder.jpg);
-    background-position: center center;
     text-align:center;
     min-height:150px;
     padding-top: 70px;
 }
+
+h3 {
+  text-transform: uppercase;
+}
+
+h3, h4 {
+  font-weight: bold;
+}
+
+
+.exp, .piece {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.exp .title {
+  color: #98508c;
+  flex: 0 0 33.3%;
+  max-width: 33%;
+}
+
+/* marche pas */
+.exp .title .h4 .span {
+  color: #dbb8d5;
+  text-decoration: underline;
+}
+
+
+.exp .descrition {
+  flex: 0 0 66.6%;
+  max-width: 66.6%;
+}
+
+.exp .descrition p {
+  padding-left: 1em;
+}
+
+.piece .column {
+  flex: 0 0 30%;
+  max-width: 30%;
+}
+.piece .column ul {
+  list-style-type: none;
+}
+
+.piece .column ul > li:before {
+  content: "\27A4";
+  padding-right: 0.5em;
+  color: #98508c;
+}
+
+
+.rep {
+  text-transform: capitalize;
+}
+
+.rep span{
+  color: #dbb8d5;
+  text-decoration: underline;
+}
+
+/* ul.job-description li:before{ */
+/*   content: "✔"; */
+/*   padding-right: 0.5em; */
+/*   color: #509e98; */
+/* } */
+
+/* Pre inspiration */
 .menu_list{
     list-style-type:none;
     margin:0;
