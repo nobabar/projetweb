@@ -41,11 +41,11 @@ header{
     padding-top: 70px;
 }
 
-h3 {
+#veloP h3 {
   text-transform: uppercase;
 }
 
-h3, h4 {
+#veloP h3, #veloP h4 {
   font-weight: bold;
 }
 
@@ -62,8 +62,7 @@ h3, h4 {
   max-width: 33%;
 }
 
-/* marche pas */
-.exp .title .h4 .span {
+.exp .title h4 span {
   color: #dbb8d5;
   text-decoration: underline;
 }
