@@ -5,6 +5,18 @@ let height = [];
 
 const avg = arr => arr.reduce((acc, v, i, a) => (acc + v / a.length), 0);
 
+// generate time serie
+const getDatesBetween = (start, end, n) => {
+    const step = Math.ceil((end.getTime() - start.getTime()) / n)
+    let dates = [];
+    let current = start;
+    for (i = 0; i < n; i++) {
+        dates.push(new Date(current));
+        current.setTime(current.getTime() + step);
+    }
+    return dates;
+};
+
 // Fonction d'initialisation de la carte
 function initMap() {
     // Créer l'objet "carte" et l'insèrer dans l'élément HTML qui a l'ID "map"
@@ -52,25 +64,17 @@ window.onload = function () {
     // On ajoute à la carte
     geojsonLayer.addTo(carte);
 
-    // generate time serie
-    const getDatesBetween = (start, end, n) => {
-        const step = Math.ceil((end.getTime() - start.getTime()) / n)
-        let dates = [];
-        let current = start;
-        for (i = 0; i < n; i++) {
-            dates.push(new Date(current));
-            current.setTime(current.getTime() + step);
-        }
-        return dates;
-    };
+    let myPlot = document.getElementById("plot");
 
     let data = [{
         x: getDatesBetween(startDate, endDate, height.length),
         y: height,
-        mode: "lines"
+        type: 'scatter',
+        mode: 'line'
     }];
 
     let layout = {
+        hovermode: 'closest',
         xaxis: { type: 'date', title: "Date" },
         yaxis: { title: "Altitude (en mètres)" }
     };
@@ -79,5 +83,36 @@ window.onload = function () {
 
     // Display with Plotly
     Plotly.newPlot("plot", data, layout, config);
+
+    myPlot.on("plotly_click", function (data) {
+        const pn = data.points[0].pointNumber;
+        const pLat = lat[pn];
+        const pLon = lon[pn];
+
+        let redIcon = new L.Icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+        let marker = new L.Marker([pLat, pLon], { icon: redIcon, draggable: false }).addTo(carte);
+
+        marker.on({
+            mousedown: function () {
+                carte.on('mousemove', function (e) {
+                    carte.dragging.disable();
+                    var point = geojsonLayer.closestLayerPoint(carte.latLngToLayerPoint(e.latlng))
+                    marker.setLatLng(carte.layerPointToLatLng(point));
+                });
+            }
+        });
+        carte.on('mouseup', function (e) {
+            carte.removeEventListener('mousemove');
+            carte.dragging.enable();
+        });
+    });
 };
 
