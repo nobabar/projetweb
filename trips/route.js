@@ -5,7 +5,6 @@ let height = [];
 
 const avg = arr => arr.reduce((acc, v, i, a) => (acc + v / a.length), 0);
 
-// generate time serie
 const getDatesBetween = (start, end, n) => {
     const step = Math.ceil((end.getTime() - start.getTime()) / n)
     let dates = [];
@@ -16,6 +15,18 @@ const getDatesBetween = (start, end, n) => {
     }
     return dates;
 };
+
+function compute_stats(geojson) {
+    const total_length = geojson.features[0].properties["track-length"] / 1000
+    let denivele = 0;
+    for (let i = 1; i < height.length; i++) {
+        if (height[i] > height[i - 1]) {
+            denivele += height[i] - height[i - 1];
+        }
+    }
+    const time_length = endDate.getDate() - startDate.getDate();
+    return [time_length, total_length, denivele / 1000];
+}
 
 function distLatLon(lat1, lat2, lon1, lon2) {
     let radlat1 = Math.PI * lat1 / 180,
@@ -48,13 +59,9 @@ function findClose(latVar, latArr, lonVar, lonArr) {
     return Math.round(avg(closeIdx));
 };
 
-// Fonction d'initialisation de la carte
 function initMap() {
-    // Créer l'objet "carte" et l'insèrer dans l'élément HTML qui a l'ID "map"
     carte = L.map('map').setView([avg(lat), avg(lon)], 7);
-    // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
     L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
-        // Il est toujours bien de laisser le lien vers la source des données
         attribution: 'données © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> - rendu <a href="https://www.openstreetmap.fr">OSM France</a>',
         minZoom: 2,
         maxZoom: 15
@@ -67,8 +74,8 @@ function forEachFeature(feature, layer) {
         const popupContent = "<p> <b>Nom: </b>" + name + "</p>";
         layer.bindPopup(popupContent);
     } else if (layer instanceof L.Path) {
-        let coords = feature.geometry.coordinates;  //gets feature coords
-        for (let i = 0; i < coords.length; i++) { //loop thru coords to get Z's
+        let coords = feature.geometry.coordinates;
+        for (let i = 0; i < coords.length; i++) {
             lon.push(coords[i][0]);
             lat.push(coords[i][1]);
             height.push(coords[i][2]);
@@ -78,7 +85,7 @@ function forEachFeature(feature, layer) {
 
 window.onload = function () {
     const geojson = JSON.parse(trace);
-    // On dessine le polygone
+
     let geojsonLayer = L.geoJSON(geojson, {
         onEachFeature: forEachFeature,
         style: {
@@ -89,11 +96,12 @@ window.onload = function () {
             "fillOpacity": 0.5
         }
     });
-
     initMap();
-
-    // On ajoute à la carte
     geojsonLayer.addTo(carte);
+
+    let global_stats = compute_stats(geojson);
+    document.getElementById("global").innerHTML = `Ce voyage a duré ${global_stats[0]} jours, sur ${Math.round(global_stats
+    [1])} km et avec un dénivelé cumulé de ${global_stats[2].toPrecision(2)} km`;
 
     let redIcon = new L.Icon({
         iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
@@ -112,7 +120,6 @@ window.onload = function () {
             icon: redIcon
         }).addTo(carte);
 
-    // altitude plot
     let myPlot = document.getElementById("plot");
     let dates = getDatesBetween(startDate, endDate, height.length);
     let data = [{
@@ -136,7 +143,6 @@ window.onload = function () {
     };
     let config = { responsive: true };
 
-    // display with Plotly
     Plotly.newPlot("plot", data, layout, config);
 
     myPlot.on("plotly_click", function (data) {
