@@ -100,7 +100,7 @@ window.onload = function () {
     geojsonLayer.addTo(carte);
 
     let global_stats = compute_stats(geojson);
-    document.getElementById("global").innerHTML = `Ce voyage a duré ${global_stats[0]} jours, sur ${Math.round(global_stats
+    document.getElementById("stats").innerHTML = `Ce voyage a duré ${global_stats[0]} jours, sur ${Math.round(global_stats
     [1])} km et avec un dénivelé cumulé de ${global_stats[2].toPrecision(2)} km`;
 
     let redIcon = new L.Icon({
@@ -123,8 +123,8 @@ window.onload = function () {
     let myPlot = document.getElementById("plot");
     let dates = getDatesBetween(startDate, endDate, height.length);
     let data = [{
-        x: dates, y: height, name: 'Trace',
-        type: 'scatter', mode: 'line'
+        x: dates, y: height, name: 'Parcours',
+        type: 'scatter', mode: 'line', line: { color: "#839c49" }
     },
     {
         x: [
@@ -151,6 +151,7 @@ window.onload = function () {
         const pLon = lon[pn];
 
         marker.setLatLng([pLat, pLon]);
+        carte.panTo([pLat, pLon]);
 
         Plotly.restyle(myPlot, {
             x: [[data.points[0].x]],
