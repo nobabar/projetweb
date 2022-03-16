@@ -1,39 +1,99 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Les vélos c'est cool</title>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Les vélos c'est cool</title>
 
-  <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
-  <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
 
-<body>
-  <header>
-    <h1>Les vélos c'est sympa (aussi)</h1>
-  </header>
-  <nav>
-    <ul class='menu_list'>
-      <li><a href="accueil.html"> Accueil </a> </li>
-      <li> <a href="velo_paul.html"> Le vélo selon Paul </a> </li>
-      <li> <a href="velo_baptiste.html"> Le vélo selon Baptiste </a> </li>
-      <li> <a href="et_vous.html"> Et selon vous? </a></li>
-      <li> <a href="#"> Contact </a></li>
-    </ul>
-  </nav>
-  <main id="etv">
-  </main>
-  <footer>
-    <div id="contact_P">
-      <a href="mailto:paul.etheimer@etu.u-paris.fr"> paul.etheimer@etu.u-paris.fr </a>
-    </div>
-    <div id="contact_B">
-      <a href="mailto:baptiste.rousseau@etu.u-paris.fr"> baptiste.rousseau@etu.u-paris.fr </a>
-    </div>
-  </footer>
-</body>
+  <body>
+    <header>
+      <h1>Les vélos c'est sympa (aussi)</h1>
+    </header>
+    <nav>
+      <ul class='menu_list'>
+	<li><a href="accueil.html"> Accueil </a> </li>
+	<li> <a href="velo_paul.html"> Le vélo selon Paul </a> </li>
+	<li> <a href="velo_baptiste.html"> Le vélo selon Baptiste </a> </li>
+	<li> <a href="et_vous.html"> Et selon vous? </a></li>
+	<li> <a href="#"> Contact </a></li>
+      </ul>
+    </nav>
+    <main id="etv">
+      <form name="formulaire" action="./et_vous.js">
+	<fieldset>
+	  <label for="util"> Utilisez vous régulièrement un vélo? </label>
+	  <select id="util" name="user_util">
+	    <option> Jamais</option>
+	    <option> Une fois par an</option>
+	    <option> Une fois par mois </option>
+	    <option> Une fois par semaine </option>
+	    <option> Une fois par jour </option>
+	    <option> Je télétravaille depuis ma selle </option>
+	  </select>
+	</fieldset>
+	<fieldset>
+	  <p> La vélo pour vous c'est :</p>
+	  <input type="radio" id="sport" name="vous" value="sport">
+	  <label for="sport"> Un sport </label>
+	  <input type="radio" id="trans" name="vous" value="trans">
+	  <label for="trans"> Un mode de transport </label>
+	  <input type="radio" id="vie" name="vous" value="vie">
+	  <label for="vie"> Ma vie </label>
+	  <input type="radio" id="bobo" name="vous" value="bobo">
+	  <label for="bobo"> Un truc de bobos parisiens ou bordelais </label>
+	</fieldset>
+	<fieldset>
+	<label for="paris"> Le vélo à Paris c'est : </label>
+	  <select id="util" name="user_util" size="4" multiple>
+	    <option> Une hérésie </option>
+	    <option> Le vélib </option>
+	    <option> Pour se balader le weekend </option>
+	    <option> Pour tout </option>
+	  </select>
+	</fieldset>
+        <fieldset>
+	  <p> Réparer un vélo :</p>
+	  <input type="radio" id="jam" name="repar" value="jam">
+	  <label for="jam"> Jamais de la vie </label>
+	  <input type="radio" id="pneus" name="repar" value="pneus">
+	  <label for="pneu"> À la limite je veux bien gonfler mes pneus </label>
+	  <input type="radio" id="tout" name="repar" value="tout">
+	  <label for="tout"> Je peux tout changer </label>
+	  <input type="radio" id="bloc" name="repar" value="bloc">
+	  <label for="bloc"> J'ai construit mon vélo avec un bloc d'acier et du caoutchouc </label>
+	</fieldset>
+	<fieldset>
+	  <p> Les automobilistes :</p>
+	  <input type="radio" id="boeu" name="auto" value="boeu">
+	  <label for="boeu"> Des boeufs </label>
+	  <input type="radio" id="assass" name="auto" value="assass">
+	  <label for="assas"> Des assassins </label>
+	  <input type="radio" id="voit" name="auto" value="voit">
+	  <label for="voit"> Moi j'aime bien les voitures </label>
+	  <input type="radio" id="4head" name="auto" value="4head">
+	  <label for="4head"> Tous les êtres humains sont bons et ce sont les infrastructures qui conditionnent les comportements 4head </label>
+	</fieldset>
+	<div>
+	  <input type="submit" value="Submit">
+	</div>
+	<div>
+	  <button type="reset"> Annuler </button>
+	</div>
+    </main>
+    <footer>
+      <div id="contact_P">
+	<a href="mailto:paul.etheimer@etu.u-paris.fr"> paul.etheimer@etu.u-paris.fr </a>
+      </div>
+      <div id="contact_B">
+	<a href="mailto:baptiste.rousseau@etu.u-paris.fr"> baptiste.rousseau@etu.u-paris.fr </a>
+      </div>
+    </footer>
+  </body>
 
 </html>

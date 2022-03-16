@@ -140,4 +140,6 @@ footer {
     justify-content:space-around;
 
 }
-    
+fieldset{
+        border:0;
+}
