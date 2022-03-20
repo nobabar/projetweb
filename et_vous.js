@@ -13,62 +13,57 @@ function calculate_score() {
 	score += 100;
     }
 
-    console.log(score);
     vous = Array.from(document.querySelectorAll("[name=vous]:checked"), e => e.value)
     // Question 2    
-    if (vous[0]) {
+    if (vous.includes("sport")) {
 	score += 5;
     }
-    if (vous[1]) {
+    if (vous.includes("trans")) {
 	score += 5;
     }
-    if (vous[2]) {
+    if (vous.includes("vie")) {
 	score += 100;
     }
-    if (vous[3]) {
+    if (vous.includes("bobo")) {
 	score -= 10;
     }
-    console.log(score);
 
     // Question 3
-    if (form["user_paris"].value === "Une hérésie") {
+    paris = Array.from(document.querySelectorAll("[name=paris]:checked"), e => e.value);
+    if (paris.includes("heres")) {
 	score -=10;
     }
-    if (form["user_paris"].value === "Le vélib") {
+    if (paris.includes("velib")) {
 	score += 5;
     }
-    if (form["user_paris"].value === "Pour se balader le weekend") {
+    if (paris.includes("balad")) {
 	score += 5;
     }
-    if (form["user_paris"].value === "Pour tout"){
+    if (paris.includes("tout")){
 	score +=100;
     }
-    console.log(score);
 
     //Question 4
-    repar = Array.from(document.querySelectorAll("[name=repar]:checked"), e => e.value)
-    if(repar[0]) {
+    if(form["repar"].value === "jam") {
 	score -= 10;
-    } else if (repar[2]) {
+    } else if (form["repar"].value === "tout") {
 	score += 10;
-    } else if (repar[3]) {
+    } else if (form["repar"].value ==="bloc") {
 	score += 100;
     }
-    console.log(score);
 
     //Question 5
-    auto = Array.from(document.querySelectorAll("[name=repar]:checked"), e => e.value)
-    if (auto[0]) {
+    auto = Array.from(document.querySelectorAll("[name=auto]:checked"), e => e.value);
+    if (auto.includes("boeu")) {
 	score += 5;
     }
-    if (auto[1]) {
+    if (auto.includes("assass")) {
 	score += 5;
     }
-    if (auto[2]) {
+    if (auto.includes("voit")) {
 	score -= 5;
     }
-    if (auto[3]) {
+    if (auto.includes("4head")) {
 	score += 10;
     }
-    console.log(score);
 }

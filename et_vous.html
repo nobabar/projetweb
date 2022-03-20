@@ -50,19 +50,21 @@
 	  <label for="bobo"> Un truc de bobos parisiens ou bordelais </label>
 	</fieldset>
 	<fieldset>
-	<label for="paris"> Le vélo à Paris c'est : </label>
-	  <select id="paris" name="user_paris" size="4" multiple>
-	    <option> Une hérésie </option>
-	    <option> Le vélib </option>
-	    <option> Pour se balader le weekend </option>
-	    <option> Pour tout </option>
-	  </select>
+	<p> Le vélo à Paris c'est : </p>
+	<input type="checkbox" id="heres" name="paris" value="heres">
+	  <label for="heres"> Une hérésie </label>
+	  <input type="checkbox" id="velib" name="paris" value="velib">
+	  <label for="velib"> Le vélib </label>
+	  <input type="checkbox" id="balad" name="paris" value="balad">
+	  <label for="balad"> Pour se balader le weekend </label>
+	  <input type="checkbox" id="tout" name="paris" value="tout">
+	  <label for="tout"> Pour tout </label>
 	</fieldset>
         <fieldset>
 	  <p> Réparer un vélo :</p>
 	  <input type="radio" id="jam" name="repar" value="jam">
 	  <label for="jam"> Jamais de la vie </label>
-	  <input type="radio" id="pneu" name="repar" value="pneus">
+	  <input type="radio" id="pneu" name="repar" value="pneu">
 	  <label for="pneu"> À la limite je veux bien gonfler mes pneus </label>
 	  <input type="radio" id="tout" name="repar" value="tout">
 	  <label for="tout"> Je peux tout changer </label>
@@ -73,7 +75,7 @@
 	  <p> Les automobilistes :</p>
 	  <input type="checkbox" id="boeu" name="auto" value="boeu">
 	  <label for="boeu"> Des boeufs </label>
-	  <input type="checkbox" id="assas" name="auto" value="assass">
+	  <input type="checkbox" id="assass" name="auto" value="assass">
 	  <label for="assas"> Des assassins </label>
 	  <input type="checkbox" id="voit" name="auto" value="voit">
 	  <label for="voit"> Moi j'aime bien les voitures </label>
