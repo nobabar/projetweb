@@ -1,9 +1,19 @@
 .legend-container {
-    width: 800px;
-    height: 500px;
     background-image: url(./ExplodedView.jpg);
+}
+
+#guidon {
+    width: 800px;
+    height: 460px;
     background-size: 300%;
-    background-position: 0 0;
+    background-position: -35px -35px;
+}
+
+#moyeulibre {
+    width: 650px;
+    height: 550px;
+    background-size: 400%;
+    background-position: -1190px -1270px;
 }
 
 .quiz-selector {
