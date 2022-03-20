@@ -1,0 +1,12 @@
+.legend-container {
+    width: 800px;
+    height: 500px;
+    background-image: url(./ExplodedView.jpg);
+    background-size: 300%;
+    background-position: 0 0;
+}
+
+.quiz-selector {
+    position: relative;
+    width: 130px;
+}
