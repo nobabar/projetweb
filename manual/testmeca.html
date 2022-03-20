@@ -16,9 +16,10 @@
     <h3>Vous pouvez à tout moment vous aider du <a href="./manual.html">carnet de notes</a> ou bien du <a
             href="https://wiklou.org/wiki/Accueil">wiklou</a></h3>
 
-    <div class="legend-container">
+    <h4>Guidon</h4>
+    <div class="legend-container" id="guidon">
         <select class="quiz-selector" id="cintre" onchange="giveSelection(this)" oldvalue="0"
-            style="left: 700px; top: 120px;">
+            style="left: 680px; top: 100px;">
             <option value="empty" data-id="0">--</option>
             <option value="1" data-id="1">Cintre</option>
             <option value="2" data-id="2">Potence</option>
@@ -27,10 +28,43 @@
             <option value="5" data-id="5">Levier de vitesse</option>
         </select>
         <select class="quiz-selector" id="potence" onchange="giveSelection(this)" oldvalue="0"
-            style="left: 70px; top: 330px;">
+            style="left: 5px; top: 300px;">
+        </select>
+        <select class="quiz-selector" id="plongeur" onchange="giveSelection(this)" oldvalue="0"
+            style="left: -128px; top: 370px;">
+        </select>
+        <select class="quiz-selector" id="frein" onchange="giveSelection(this)" oldvalue="0"
+            style="left: 150px; top: 380px;">
+        </select>
+        <select class="quiz-selector" id="vitesse" onchange="giveSelection(this)" oldvalue="0"
+            style="left: -335px; top: 47px;">
         </select>
     </div>
 
+    <h4>Moyeu</h4>
+    <div class="legend-container" id="moyeulibre">
+        <select class="quiz-selector" id="pignons" onchange="giveSelection(this)" oldvalue="0"
+            style="left: 30px; top: 185px;">
+            <option value="empty" data-id="0">--</option>
+            <option value="1" data-id="1">Pignons</option>
+            <option value="2" data-id="2">Roue libre</option>
+            <option value="3" data-id="3">Moyeu</option>
+            <option value="4" data-id="4">Axe</option>
+            <option value="5" data-id="5">Roulement à bille</option>
+        </select>
+        <select class="quiz-selector" id="libre" onchange="giveSelection(this)" oldvalue="0"
+            style="left: -50px; top: 145px;">
+        </select>
+        <select class="quiz-selector" id="moyeu" onchange="giveSelection(this)" oldvalue="0"
+            style="left: -110px; top: 110px;">
+        </select>
+        <select class="quiz-selector" id="axe" onchange="giveSelection(this)" oldvalue="0"
+            style="left: 90px; top: 340px;">
+        </select>
+        <select class="quiz-selector" id="bille" onchange="giveSelection(this)" oldvalue="0"
+            style="left: 375px; top: 365px;">
+        </select>
+    </div>
 
     Quelle est la partie qui relie l'axe à la jante ?
     Le pneu
