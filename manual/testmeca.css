@@ -24,12 +24,13 @@
 
 #questions div {
     padding-top: 10px;
+    padding-bottom: 5px;
 }
 
 #guidon {
     width: 800px;
     height: 460px;
-    background-size: 300%;
+    background-size: 310%;
     background-position: -35px -35px;
 }
 

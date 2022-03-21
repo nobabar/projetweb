@@ -17,14 +17,14 @@
             href="./manual.html">carnet de
             notes</a> ou bien du <a href="https://wiklou.org/wiki/Accueil">wiklou</a></h3>
 
-    <form action="">
+    <form action="" style="margin: auto;" name="quiz">
         <div class="horizontal-container">
             <div class="section">
                 <h4 class="section-title">Guidon</h4>
                 <div class="legend-container" id="guidon">
                     <select class="quiz-selector" id="cintre" onchange="giveSelection(this)" oldvalue="0"
-                        style="left: 680px; top: 100px;">
-                        <option value="empty" data-id="0">--</option>
+                        style="left: 660px; top: 105px;">
+                        <option value="0" data-id="0">--</option>
                         <option value="1" data-id="1">Cintre</option>
                         <option value="2" data-id="2">Potence</option>
                         <option value="3" data-id="3">Plongeur</option>
@@ -32,70 +32,70 @@
                         <option value="5" data-id="5">Levier de vitesse</option>
                     </select>
                     <select class="quiz-selector" id="potence" onchange="giveSelection(this)" oldvalue="0"
-                        style="left: 5px; top: 300px;">
+                        style="left: 15px; top: 305px;">
                     </select>
                     <select class="quiz-selector" id="plongeur" onchange="giveSelection(this)" oldvalue="0"
-                        style="left: -128px; top: 370px;">
+                        style="left: -120px; top: 375px;">
                     </select>
                     <select class="quiz-selector" id="frein" onchange="giveSelection(this)" oldvalue="0"
                         style="left: 150px; top: 380px;">
                     </select>
                     <select class="quiz-selector" id="vitesse" onchange="giveSelection(this)" oldvalue="0"
-                        style="left: -335px; top: 47px;">
+                        style="left: -340px; top: 48px;">
                     </select>
                 </div>
             </div>
             <div class="section" id="questions">
                 <div>À quelle pression faut-il gonfler un pneu de vélo ?<br>
-                    <input type="radio" id="q1plus" name="q1" value="plus">
+                    <input type="radio" id="q1plus" name="q1" value="q1plus">
                     <label for="q1plus">Le plus possible</label><br>
 
-                    <input type="radio" id="q1100" name="q1" value="100">
+                    <input type="radio" id="q1100" name="q1" value="q1100">
                     <label for="q1100">Environ 100 p.s.i.</label><br>
 
-                    <input type="radio" id="q160" name="q1" value="60">
+                    <input type="radio" id="q160" name="q1" value="q160">
                     <label for="q160">Environ 60 p.s.i.</label><br>
 
-                    <input type="radio" id="q1perc" name="q1" value="perc">
+                    <input type="radio" id="q1perc" name="q1" value="q1perc">
                     <label for="q1perc">10% du poids du cycliste en bar</label><br>
                 </div>
 
                 <div>Quel est le nom du mécanisme qui fait changer de pignons à l'arrière ?<br>
-                    <input type="radio" id="q2derailleur" name="q2" value="derailleur">
+                    <input type="radio" id="q2derailleur" name="q2" value="q2derailleur">
                     <label for="q2derailleur">Le dérailleur</label><br>
 
-                    <input type="radio" id="q2plateau" name="q2" value="plateau">
+                    <input type="radio" id="q2plateau" name="q2" value="q2plateau">
                     <label for="q2plateau">Le plateau</label><br>
 
-                    <input type="radio" id="q2patin" name="q2" value="patin">
+                    <input type="radio" id="q2patin" name="q2" value="q2patin">
                     <label for="q2patin">Le patin</label><br>
                 </div>
 
-                <div>Que faire pour éliminer le bruit de "crissement" d'un frein ?<br>
-                    <input type="radio" id="q3patins" name="q3" value="patins">
+                <div>Que faire pour éliminer le bruit de crissement d'un frein ?<br>
+                    <input type="radio" id="q3patins" name="q3" value="q3patins">
                     <label for="q3patins">Remplacer les patins</label><br>
 
-                    <input type="radio" id="q3huile" name="q3" value="huile">
+                    <input type="radio" id="q3huile" name="q3" value="q3huile">
                     <label for="q3huile">Appliquer de l'huile sur la jante</label><br>
 
-                    <input type="radio" id="q3angle" name="q3" value="angle">
+                    <input type="radio" id="q3angle" name="q3" value="q3angle">
                     <label for="q3angle">Modifier l'angle de contact</label><br>
 
-                    <input type="radio" id="q3graisse" name="q3" value="graisse">
+                    <input type="radio" id="q3graisse" name="q3" value="q3graisse">
                     <label for="q3graisse">Appliquer de la graisse sur les patins</label><br>
                 </div>
 
                 <div>Que doit-on vérifier lors de la réparation d'une crevaison ?<br>
-                    <input type="checkbox" id="q4secher" name="q4" value="secher">
+                    <input type="checkbox" id="q4secher" name="q4" value="q4secher">
                     <label for="q4secher">Laisser sécher la colle à rustine avant de poser la rustine</label><br>
 
-                    <input type="checkbox" id="q4perforant" name="q4" value="perforant">
+                    <input type="checkbox" id="q4perforant" name="q4" value="q4perforant">
                     <label for="q4perforant">Vérifier s'il ne reste pas un objet perforant dans le pneu</label><br>
 
-                    <input type="checkbox" id="q4gratter" name="q4" value="gratter">
+                    <input type="checkbox" id="q4gratter" name="q4" value="q4gratter">
                     <label for="q4gratter">Grattez autour du trou avec du papier de verre ou un grattoir.</label><br>
 
-                    <input type="checkbox" id="q4gonfler" name="q4" value="gonfler">
+                    <input type="checkbox" id="q4gonfler" name="q4" value="q4gonfler">
                     <label for="q4gonfler">Regonfler à la pression habituelle</label><br>
                 </div>
             </div>
@@ -145,7 +145,8 @@
 
         <div>
             <button type="button" onclick="checkResults()">Envoyer</button>
-            <button type="reset">Reset</button>
+            <button type="reset" onclick="resetDisplay()">Réinitialiser</button>
+            <button type="button" onclick="goodResults()" id="correction" hidden>Correction</button>
 
             <div id="results"></div>
         </div>
