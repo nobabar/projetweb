@@ -66,4 +66,19 @@ function calculate_score() {
     if (auto.includes("4head")) {
 	score += 10;
     }
+
+    // Result
+    var rep = document.getElementById("rep");
+    rep.innerHTML = "<p <style='font-size: 20px'> <strong> Votre résultat </strong> : </p><br>"; 
+    if (score > 100) {
+	rep.innerHTML += "<p>Vous êtes un <bold> fou </bold> du vélo! C'est votre vie, et même plus. <br> Faites attention quand même.</p>";
+    } else if (score > 40) {
+	rep.innerHTML += "<p> Le vélo vous motive beaucoup ! Utilisateur régulier, connaisseur, vous ne le laissez pas vous dominer non plus. </p>";
+    } else if (score > 0) {
+	rep.innerHTML += "<p> Le vélo ne vous fait ni chaud ni froid. Pourquoi pas de temps en temps, pas de quoi révolutionner votre mobilité non plus. Centriste </p>";
+    } else {
+	rep.innerHTML+="<p> J'hésite à ban votre IP </p>";
+    }
+
+    
 }
