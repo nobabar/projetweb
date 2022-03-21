@@ -1,5 +1,29 @@
+.section {
+    margin: auto;
+}
+
+.section-title {
+    text-decoration: underline;
+}
+
+.horizontal-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+}
+
 .legend-container {
     background-image: url(./ExplodedView.jpg);
+}
+
+#questions {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#questions div {
+    padding-top: 10px;
 }
 
 #guidon {
@@ -14,6 +38,13 @@
     height: 550px;
     background-size: 400%;
     background-position: -1190px -1270px;
+}
+
+#roue {
+    width: 700px;
+    height: 520px;
+    background-size: 450%;
+    background-position: -2400px -570px;
 }
 
 .quiz-selector {
