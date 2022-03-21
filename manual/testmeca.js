@@ -47,3 +47,7 @@ function giveSelection(selected) {
         selected.setAttribute("oldvalue", selected.value);
     }
 }
+
+function checkResults() {
+    let guidon = Array.from(document.querySelectorAll("#guidon select"), e => e.value);
+}

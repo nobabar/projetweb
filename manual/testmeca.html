@@ -12,79 +12,144 @@
 </head>
 
 <body>
-    <h1>Testez vos connaissances en mécanique</h1>
-    <h3>Vous pouvez à tout moment vous aider du <a href="./manual.html">carnet de notes</a> ou bien du <a
-            href="https://wiklou.org/wiki/Accueil">wiklou</a></h3>
+    <h1>Testez vos connaissances en mécanique vélo</h1>
+    <h3 style="padding-bottom: 20px; border-bottom: solid; width: 800px;">Vous pouvez à tout moment vous aider du <a
+            href="./manual.html">carnet de
+            notes</a> ou bien du <a href="https://wiklou.org/wiki/Accueil">wiklou</a></h3>
 
-    <h4>Guidon</h4>
-    <div class="legend-container" id="guidon">
-        <select class="quiz-selector" id="cintre" onchange="giveSelection(this)" oldvalue="0"
-            style="left: 680px; top: 100px;">
-            <option value="empty" data-id="0">--</option>
-            <option value="1" data-id="1">Cintre</option>
-            <option value="2" data-id="2">Potence</option>
-            <option value="3" data-id="3">Plongeur</option>
-            <option value="4" data-id="4">Levier de frein</option>
-            <option value="5" data-id="5">Levier de vitesse</option>
-        </select>
-        <select class="quiz-selector" id="potence" onchange="giveSelection(this)" oldvalue="0"
-            style="left: 5px; top: 300px;">
-        </select>
-        <select class="quiz-selector" id="plongeur" onchange="giveSelection(this)" oldvalue="0"
-            style="left: -128px; top: 370px;">
-        </select>
-        <select class="quiz-selector" id="frein" onchange="giveSelection(this)" oldvalue="0"
-            style="left: 150px; top: 380px;">
-        </select>
-        <select class="quiz-selector" id="vitesse" onchange="giveSelection(this)" oldvalue="0"
-            style="left: -335px; top: 47px;">
-        </select>
-    </div>
+    <form action="">
+        <div class="horizontal-container">
+            <div class="section">
+                <h4 class="section-title">Guidon</h4>
+                <div class="legend-container" id="guidon">
+                    <select class="quiz-selector" id="cintre" onchange="giveSelection(this)" oldvalue="0"
+                        style="left: 680px; top: 100px;">
+                        <option value="empty" data-id="0">--</option>
+                        <option value="1" data-id="1">Cintre</option>
+                        <option value="2" data-id="2">Potence</option>
+                        <option value="3" data-id="3">Plongeur</option>
+                        <option value="4" data-id="4">Levier de frein</option>
+                        <option value="5" data-id="5">Levier de vitesse</option>
+                    </select>
+                    <select class="quiz-selector" id="potence" onchange="giveSelection(this)" oldvalue="0"
+                        style="left: 5px; top: 300px;">
+                    </select>
+                    <select class="quiz-selector" id="plongeur" onchange="giveSelection(this)" oldvalue="0"
+                        style="left: -128px; top: 370px;">
+                    </select>
+                    <select class="quiz-selector" id="frein" onchange="giveSelection(this)" oldvalue="0"
+                        style="left: 150px; top: 380px;">
+                    </select>
+                    <select class="quiz-selector" id="vitesse" onchange="giveSelection(this)" oldvalue="0"
+                        style="left: -335px; top: 47px;">
+                    </select>
+                </div>
+            </div>
+            <div class="section" id="questions">
+                <div>À quelle pression faut-il gonfler un pneu de vélo ?<br>
+                    <input type="radio" id="q1plus" name="q1" value="plus">
+                    <label for="q1plus">Le plus possible</label><br>
 
-    <h4>Moyeu</h4>
-    <div class="legend-container" id="moyeulibre">
-        <select class="quiz-selector" id="pignons" onchange="giveSelection(this)" oldvalue="0"
-            style="left: 30px; top: 185px;">
-            <option value="empty" data-id="0">--</option>
-            <option value="1" data-id="1">Pignons</option>
-            <option value="2" data-id="2">Roue libre</option>
-            <option value="3" data-id="3">Moyeu</option>
-            <option value="4" data-id="4">Axe</option>
-            <option value="5" data-id="5">Roulement à bille</option>
-        </select>
-        <select class="quiz-selector" id="libre" onchange="giveSelection(this)" oldvalue="0"
-            style="left: -50px; top: 145px;">
-        </select>
-        <select class="quiz-selector" id="moyeu" onchange="giveSelection(this)" oldvalue="0"
-            style="left: -110px; top: 110px;">
-        </select>
-        <select class="quiz-selector" id="axe" onchange="giveSelection(this)" oldvalue="0"
-            style="left: 90px; top: 340px;">
-        </select>
-        <select class="quiz-selector" id="bille" onchange="giveSelection(this)" oldvalue="0"
-            style="left: 375px; top: 365px;">
-        </select>
-    </div>
+                    <input type="radio" id="q1100" name="q1" value="100">
+                    <label for="q1100">Environ 100 p.s.i.</label><br>
 
-    Quelle est la partie qui relie l'axe à la jante ?
-    Le pneu
-    La chambre à air
-    Les rayons
+                    <input type="radio" id="q160" name="q1" value="60">
+                    <label for="q160">Environ 60 p.s.i.</label><br>
 
-    Quel est le nom du mécanisme qui fait changer de pignons à l'arrière ?
-    Le dérailleur
-    La plateau
-    Le patin
+                    <input type="radio" id="q1perc" name="q1" value="perc">
+                    <label for="q1perc">10% du poids du cycliste en bar</label><br>
+                </div>
 
-    Quel nom porte la partie qui supporte le guidon ?
-    La selle
-    La potence
-    La fourche
+                <div>Quel est le nom du mécanisme qui fait changer de pignons à l'arrière ?<br>
+                    <input type="radio" id="q2derailleur" name="q2" value="derailleur">
+                    <label for="q2derailleur">Le dérailleur</label><br>
 
-    Quel est le nom de la partie recevant le pneu ?
-    La chambre à air
-    La jante
-    La valve
+                    <input type="radio" id="q2plateau" name="q2" value="plateau">
+                    <label for="q2plateau">Le plateau</label><br>
+
+                    <input type="radio" id="q2patin" name="q2" value="patin">
+                    <label for="q2patin">Le patin</label><br>
+                </div>
+
+                <div>Que faire pour éliminer le bruit de "crissement" d'un frein ?<br>
+                    <input type="radio" id="q3patins" name="q3" value="patins">
+                    <label for="q3patins">Remplacer les patins</label><br>
+
+                    <input type="radio" id="q3huile" name="q3" value="huile">
+                    <label for="q3huile">Appliquer de l'huile sur la jante</label><br>
+
+                    <input type="radio" id="q3angle" name="q3" value="angle">
+                    <label for="q3angle">Modifier l'angle de contact</label><br>
+
+                    <input type="radio" id="q3graisse" name="q3" value="graisse">
+                    <label for="q3graisse">Appliquer de la graisse sur les patins</label><br>
+                </div>
+
+                <div>Que doit-on vérifier lors de la réparation d'une crevaison ?<br>
+                    <input type="checkbox" id="q4secher" name="q4" value="secher">
+                    <label for="q4secher">Laisser sécher la colle à rustine avant de poser la rustine</label><br>
+
+                    <input type="checkbox" id="q4perforant" name="q4" value="perforant">
+                    <label for="q4perforant">Vérifier s'il ne reste pas un objet perforant dans le pneu</label><br>
+
+                    <input type="checkbox" id="q4gratter" name="q4" value="gratter">
+                    <label for="q4gratter">Grattez autour du trou avec du papier de verre ou un grattoir.</label><br>
+
+                    <input type="checkbox" id="q4gonfler" name="q4" value="gonfler">
+                    <label for="q4gonfler">Regonfler à la pression habituelle</label><br>
+                </div>
+            </div>
+        </div>
+
+        <div class="horizontal-container">
+            <div class="section">
+                <h4 class="section-title">Moyeu</h4>
+                <div class="legend-container" id="moyeulibre">
+                    <select class="quiz-selector" id="pignons" onchange="giveSelection(this)" oldvalue="0"
+                        style="left: 30px; top: 185px;">
+                        <option value="empty" data-id="0">--</option>
+                        <option value="1" data-id="1">Pignons</option>
+                        <option value="2" data-id="2">Roue libre</option>
+                        <option value="3" data-id="3">Moyeu</option>
+                        <option value="4" data-id="4">Axe</option>
+                        <option value="5" data-id="5">Roulement à bille</option>
+                    </select>
+                    <select class="quiz-selector" id="libre" onchange="giveSelection(this)" oldvalue="0"
+                        style="left: -50px; top: 145px;">
+                    </select>
+                    <select class="quiz-selector" id="moyeu" onchange="giveSelection(this)" oldvalue="0"
+                        style="left: -110px; top: 110px;">
+                    </select>
+                    <select class="quiz-selector" id="axe" onchange="giveSelection(this)" oldvalue="0"
+                        style="left: 90px; top: 340px;">
+                    </select>
+                    <select class="quiz-selector" id="bille" onchange="giveSelection(this)" oldvalue="0"
+                        style="left: 375px; top: 365px;">
+                    </select>
+                </div>
+            </div>
+            <div class="section">
+                <h4 class="section-title">Roue</h4>
+                <div class="legend-container" id="roue">
+                    <input type="text" class="quiz-selector" id="jante" style="left: 60px; top: 80px;">
+                    <input type="text" class="quiz-selector" id="fond" style="left: 20px; top: 49px;">
+                    <input type="text" class="quiz-selector" id="air" style="left: 40px; top: 60px;">
+                    <input type="text" class="quiz-selector" id="pneu" style="left: 110px; top: 40px;">
+                    <input type="text" class="quiz-selector" id="valve" style="left: 430px; top: 220px;">
+                    <input type="text" class="quiz-selector" id="rayon" style="left: -100px; top: 430px;">
+                    <input type="text" class="quiz-selector" id="rayon" style="left: -280px; top: 120px;"
+                        placeholder="*bonus">
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <button type="button" onclick="checkResults()">Envoyer</button>
+            <button type="reset">Reset</button>
+
+            <div id="results"></div>
+        </div>
+    </form>
 </body>
 
 </html>
