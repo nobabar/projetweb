@@ -141,3 +141,13 @@ footer {
 fieldset{
         border:0;
 }
+
+img.portrait {
+    width: 200px;
+}
+
+.cv-header {
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-around;
+}
