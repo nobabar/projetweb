@@ -14,7 +14,7 @@ body, html {
 	height: 100%;
 	z-index: 0;
 	position:absolute;
-	background-image: url(workbench_tools.jpg);
+	background-image: url(../www/workbench_tools.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-attachment: fixed;
