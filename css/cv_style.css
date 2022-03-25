@@ -1,0 +1,129 @@
+/* general */
+
+body {
+    font-family: Raleway, sans-serif;
+    text-align: justify;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.page {
+    border-style: outset;
+    overflow: hidden;
+    width: 700px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.colorbox {
+    color: white;
+    background-color: black;
+    padding: 0 2px;
+}
+
+.flex-table {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: repeat(auto-fill, auto);
+    margin: auto;
+}
+
+/* header */
+
+div.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+div.name {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+div.contact {
+    display: flex;
+    align-items: center;
+
+    font-size: 10.0px;
+}
+
+.fa-icon {
+    text-align: center;
+    background-color:black;
+    color:white;
+    width: 13px;
+    height: 13px;
+    padding: 3px;
+    margin: 2px;
+}
+
+.fa-arrow {
+    color: black;
+    width: 5px;
+    height: 5px;
+}
+
+/* languages and tools */
+
+.tools-table {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1.3fr 2.7fr 1.4fr 1.6fr;
+    grid-template-rows: repeat(6, 20px);
+    width: 80%;
+    margin: auto;
+}
+
+/* entry */
+
+.entry-date {
+    font-size: 12.0px;
+}
+
+.opposed {
+    display: flex;
+    justify-content: space-between;
+}
+
+.entry-type {
+    font-size: 12.0px;
+    font-weight: bold;
+}
+
+.entry-place {
+    font-size: 10.0px;
+    font-weight: bold;
+}
+
+.entry-description {
+    font-size: 12.0px;
+}
+
+.entry-languages {
+    font-size: 10.0px;
+    font-family: Typewritter;
+}
+
+/* more about me */
+.abitmore {
+    font-size: 12.0px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
