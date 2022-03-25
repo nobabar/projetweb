@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trajet quotidien</title>
+    <link rel="icon" href="../../favicon.png">
+
+    <script type="text/javascript" src="./Par-Par4.geojson"></script>
+
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+        integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+        crossorigin=""></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+        integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+        crossorigin="" />
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <script type="text/javascript" src="../route.js"></script>
+    <link rel="stylesheet" href="../route.css">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Baptiste et Paul font du vélo</h1>
+    </header>
+    <nav>
+        <ul class='menu_list'>
+            <li><a href="../../accueil.html"> Accueil </a> </li>
+            <li> <a href="../../velo_paul.html"> Le vélo selon Paul </a> </li>
+            <li> <a href="../../velo_baptiste.html"> Le vélo selon Baptiste </a> </li>
+            <li> <a href="../../et_vous.html"> Et selon vous? </a></li>
+            <li> <a href="#"> Contact </a></li>
+        </ul>
+    </nav>
+    <h1>Trajet quotidien</h1>
+    <div id="route">
+        <div id="map"></div>
+        <div id="plot"></div>
+    </div>
+    <h2>Le voyage en quelques chiffres</h2>
+    <div id="stats"></div>
+
+    <h2>Ce qu'on en a pensé</h2>
+    <div class="lorem">
+      <p>Un trajet rendu possible par une politique relativement volontariste de création de pistes cyclables. <strong> Votez Hidalgo! </strong> Non j'exagère, faut pas pousser, n'empêche qu'il
+	est important de réaliser que la présence ou l'absence de tel ou tel équipement urbain n'est pas une fatalité, mais bien un choix politique. Ou comme quelqu'un de plus brillant a pu le dire,
+	<em> “The ultimate, hidden truth of the world, is that it‘s something that we make, and could just as easily make differently.”</em></p>
+    </div>
+</body>
+
+</html>

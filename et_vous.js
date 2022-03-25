@@ -69,7 +69,7 @@ function calculate_score() {
 
     // Result
     var rep = document.getElementById("rep");
-    rep.innerHTML = "<p <style='font-size: 20px'> <strong> Votre résultat </strong> : </p><br>"; 
+    rep.innerHTML = "<p <style='font-size: 20px'> <strong> Votre résultat </strong> : </p>"; 
     if (score > 100) {
 	rep.innerHTML += "<p>Vous êtes un <bold> fou </bold> du vélo! C'est votre vie, et même plus. <br> Faites attention quand même.</p>";
     } else if (score > 40) {
