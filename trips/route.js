@@ -108,7 +108,7 @@ function findClose(latVar, latArr, lonVar, lonArr, delta = 5) {
 * Initialize the map. Set the default position of the map and the attribution text.
 */
 function initMap() {
-    carte = L.map('map').setView([avg(lat), avg(lon)], 7);  // center the map on the mean coordinates of the route
+    carte = L.map('map').setView([avg(lat), avg(lon)], 6);  // center the map on the mean coordinates of the route
     L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
         attribution: 'données © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> - rendu <a href="https://www.openstreetmap.fr">OSM France</a>',
         minZoom: 2,
@@ -164,6 +164,7 @@ window.onload = function () {
     // initialize the map and add the geojson layer to it
     initMap();
     geojsonLayer.addTo(carte);
+    carte.fitBounds(geojsonLayer.getBounds());
 
     // compute and display some statistics about the trip
     let global_stats = compute_stats(geojson);
@@ -180,33 +181,13 @@ window.onload = function () {
         shadowSize: [41, 41]
     });
 
-    // make the movable marker and add it to the map at the middle point of the trip
-    let marker = new L.Marker(
-        [
-            lat[Math.round(lat.length / 2)],
-            lon[Math.round(lon.length / 2)]
-        ],
-        {
-            icon: redIcon
-        }).addTo(carte);
-
     // settings and data for the altitude plot
     let myPlot = document.getElementById("plot");
     let dates = getDatesBetween(startDate, endDate, height.length);
     let data = [{
         x: dates, y: height, name: 'Parcours',
         type: 'scatter', mode: 'line', line: { color: "#839c49" }
-    },
-    {
-        x: [
-            dates[Math.round(dates.length / 2)]
-        ],
-        y: [
-            height[Math.round(height.length / 2)]
-        ],
-        name: 'Marqueur', type: 'scatter', mode: 'markers',
-        marker: { size: 15, color: "#CB2B3E" }
-    }];
+    }]
     let layout = {
         hovermode: 'closest',
         xaxis: { type: 'date', title: "Date" },
@@ -214,36 +195,61 @@ window.onload = function () {
     };
     let config = { responsive: true };
 
+    let marker
+    if (activate_mark) {
+        // make the movable marker and add it to the map at the middle point of the trip
+        marker = new L.Marker(
+            [
+                lat[Math.round(lat.length / 2)],
+                lon[Math.round(lon.length / 2)]
+            ],
+            {
+                icon: redIcon
+            }).addTo(carte);
+        data.push({
+            x: [
+                dates[Math.round(dates.length / 2)]
+            ],
+            y: [
+                height[Math.round(height.length / 2)]
+            ],
+            name: 'Marqueur', type: 'scatter', mode: 'markers',
+            marker: { size: 15, color: "#CB2B3E" }
+        });
+    }
+
     // make the altitude plot
     Plotly.newPlot("plot", data, layout, config);
 
-    // make the trace on the plot clickable and move the marker to the clicked point
-    myPlot.on("plotly_click", function (data) {
-        const pn = data.points[0].pointNumber;
-        const pLat = lat[pn];
-        const pLon = lon[pn];
+    if (activate_mark) {
+        // make the trace on the plot clickable and move the marker to the clicked point
+        myPlot.on("plotly_click", function (data) {
+            const pn = data.points[0].pointNumber;
+            const pLat = lat[pn];
+            const pLon = lon[pn];
 
-        // also make the marker move on the map
-        marker.setLatLng([pLat, pLon]);
-        carte.panTo([pLat, pLon]);
+            // also make the marker move on the map
+            marker.setLatLng([pLat, pLon]);
+            carte.panTo([pLat, pLon]);
 
-        Plotly.restyle(myPlot, {
-            x: [[data.points[0].x]],
-            y: [[data.points[0].y]]
-        }, [1]);
-    });
+            Plotly.restyle(myPlot, {
+                x: [[data.points[0].x]],
+                y: [[data.points[0].y]]
+            }, [1]);
+        });
 
-    // make the geojson layer also clickable to move the marker to the clicked point
-    geojsonLayer.on('click', function (e) {
-        marker.setLatLng(e.latlng);
+        // make the geojson layer also clickable to move the marker to the clicked point
+        geojsonLayer.on('click', function (e) {
+            marker.setLatLng(e.latlng);
 
-        let closest = findClose(e.latlng.lat, lat, e.latlng.lng, lon);
+            let closest = findClose(e.latlng.lat, lat, e.latlng.lng, lon);
 
-        // also make the marker move on the plot
-        Plotly.restyle(myPlot, {
-            x: [[dates[closest]]],
-            y: [[height[closest]]]
-        }, [1]);
-    });
-};
+            // also make the marker move on the plot
+            Plotly.restyle(myPlot, {
+                x: [[dates[closest]]],
+                y: [[height[closest]]]
+            }, [1]);
+        });
+    }
+}
 
